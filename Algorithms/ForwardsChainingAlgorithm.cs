@@ -92,6 +92,7 @@ namespace BackwardsForwardsChaining.Algorithms
 
             while (true)
             {
+                //If goal is in facts = end
                 if (GDB.Contains(goal))
                 {
                     _logger.WriteLine("      Goal achieved.");
@@ -107,6 +108,8 @@ namespace BackwardsForwardsChaining.Algorithms
                 foreach (var r in rules)
                 {
                     index++;
+
+                    //If goal is in facts = end
                     if (GDB.Contains(goal))
                     {
                         _logger.WriteLine("      Goal achieved.");
@@ -159,22 +162,21 @@ namespace BackwardsForwardsChaining.Algorithms
             }
         }
 
+        /// <summary>
+        /// Helper function to determine if all members of the left side in the rule are in global database
+        /// </summary>
+        /// <param name="facts">Facts</param>
+        /// <param name="GDB">Global database</param>
+        /// <returns>True - if all facts are in global database. False - if not all of the facts are in global database.</returns>
         private bool IsInRuleLeftSide(IEnumerable<char> facts, IEnumerable<char> GDB)
         {
             int cnt = 0;
 
             foreach (char c in facts)
-            {
                 if (GDB.Contains(c))
-                {
                     cnt++;
-                }
-            }
 
-            if (cnt == facts.Count())
-                return true;
-            else
-                return false;
+            return cnt == facts.Count();
         }
     }
 }
