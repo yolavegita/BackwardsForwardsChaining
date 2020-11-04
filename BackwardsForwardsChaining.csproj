@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Abstractions\IAlgorithm.cs" />
     <Compile Include="Abstractions\ILoggerService.cs" />
+    <Compile Include="Algorithms\BackwardsChainingAlgorithm.cs" />
     <Compile Include="Algorithms\ForwardsChainingAlgorithm.cs" />
     <Compile Include="Models\Rule.cs" />
     <Compile Include="Program.cs" />
@@ -55,5 +56,40 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Samples\input\bc\input-bc-1.txt" />
+    <Content Include="Samples\input\bc\input-bc-10.txt" />
+    <Content Include="Samples\input\bc\input-bc-2.txt" />
+    <Content Include="Samples\input\bc\input-bc-3.txt" />
+    <Content Include="Samples\input\bc\input-bc-4.txt" />
+    <Content Include="Samples\input\bc\input-bc-5.txt" />
+    <Content Include="Samples\input\bc\input-bc-6.txt" />
+    <Content Include="Samples\input\bc\input-bc-7.txt" />
+    <Content Include="Samples\input\bc\input-bc-8.txt" />
+    <Content Include="Samples\input\bc\input-bc-9.txt" />
+    <Content Include="Samples\input\fc\input-fc-1.txt" />
+    <Content Include="Samples\input\fc\input-fc-2.txt" />
+    <Content Include="Samples\input\fc\input-fc-3.txt" />
+    <Content Include="Samples\input\fc\input-fc-4.txt" />
+    <Content Include="Samples\input\fc\input-fc-5.txt" />
+    <Content Include="Samples\input\fc\input-fc-6.txt" />
+    <Content Include="Samples\output\bc\output-bc-1.txt" />
+    <Content Include="Samples\output\bc\output-bc-10.txt" />
+    <Content Include="Samples\output\bc\output-bc-2.txt" />
+    <Content Include="Samples\output\bc\output-bc-3.txt" />
+    <Content Include="Samples\output\bc\output-bc-4.txt" />
+    <Content Include="Samples\output\bc\output-bc-5.txt" />
+    <Content Include="Samples\output\bc\output-bc-6.txt" />
+    <Content Include="Samples\output\bc\output-bc-7.txt" />
+    <Content Include="Samples\output\bc\output-bc-8.txt" />
+    <Content Include="Samples\output\bc\output-bc-9.txt" />
+    <Content Include="Samples\output\fc\output-fc-1.txt" />
+    <Content Include="Samples\output\fc\output-fc-2.txt" />
+    <Content Include="Samples\output\fc\output-fc-3.txt" />
+    <Content Include="Samples\output\fc\output-fc-4.txt" />
+    <Content Include="Samples\output\fc\output-fc-5.txt" />
+    <Content Include="Samples\output\fc\output-fc-6.txt" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

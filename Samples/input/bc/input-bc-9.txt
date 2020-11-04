@@ -1,0 +1,17 @@
+Student Jonas Petraška. Vilnius university, Programų sistemos.
+Test 9. Goal among facts –empty path
+1) Rules
+B F            // R1: F -> B
+G E            // R2: E -> G. Comments.
+Z D            // R3: D -> Z
+D C            // R4: C -> D
+C B            // R5: B -> C
+B A            // R6: A -> B
+G A            // R7: A -> G
+Z G            // R8: G -> Z
+
+2) Facts
+Z
+
+3) Goal
+Z

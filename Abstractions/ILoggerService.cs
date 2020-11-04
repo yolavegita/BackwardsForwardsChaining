@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackwardsForwardsChaining.Abstractions
 {
-    public interface ILoggerService
+    public interface ILoggerService : IDisposable
     {
         void Write(string str);
         void WriteLine(string str);

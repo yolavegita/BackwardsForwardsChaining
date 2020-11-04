@@ -1,0 +1,11 @@
+Student Jonas Petraška. Vilnius university, Programų sistemos.
+Test 5. No path
+1) Rules
+B A          // R1: A -> B. Comments.
+Z C          // R2: C -> Z
+
+2) Facts
+A
+
+3) Goal
+Z

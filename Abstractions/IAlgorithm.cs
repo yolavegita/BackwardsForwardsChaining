@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BackwardsForwardsChaining.Abstractions
 {
-    public interface IAlgorithm
+    public interface IAlgorithm : IDisposable
     {
         void Execute();
     }

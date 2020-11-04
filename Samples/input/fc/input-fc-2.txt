@@ -1,0 +1,15 @@
+Student Jonas Petraška. Vilnius university, Programų sistemos.
+Test 2. Čyras vs. Negnevitsky; Čyras wins
+1) Rules
+Z G          // R1: G-> Z. Comments.
+G A          // R2: A -> G
+B A          // R3: A -> B
+C B          // R4: B -> C
+D C          // R5: C -> D
+Z D          // R6: D -> Z
+
+2) Facts
+A
+
+3) Goal
+Z

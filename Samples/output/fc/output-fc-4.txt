@@ -1,0 +1,16 @@
+PART 1. Data
+
+    1) Rules
+       R1: D -> Z
+       R2: C -> D
+       R3: B -> C
+       R4: A -> B
+       R5: A -> G
+       R6: G -> Z
+    2) Facts Z.
+    3) Goal Z.
+PART 2. Trace
+
+
+PART 3. Results
+    1) Goal Z in facts. Empty path.

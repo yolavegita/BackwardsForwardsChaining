@@ -76,9 +76,7 @@ namespace BackwardsForwardsChaining.Algorithms
             _logger.WriteLine("");
 
             if(state && _productions.Any())
-            {
                 _logger.Write($"    1) Path {string.Join(", ", _productions.Select(x => x.Number))}.");
-            }
         }
 
         private bool ExecuteInternal()
@@ -95,7 +93,9 @@ namespace BackwardsForwardsChaining.Algorithms
                 //If goal is in facts = end
                 if (GDB.Contains(goal))
                 {
-                    _logger.WriteLine("      Goal achieved.");
+                    if(iteration != 0)
+                        _logger.WriteLine("      Goal achieved.");
+
                     return true;
                 }
 
@@ -177,6 +177,11 @@ namespace BackwardsForwardsChaining.Algorithms
                     cnt++;
 
             return cnt == facts.Count();
+        }
+
+        public void Dispose()
+        {
+            _logger?.Dispose();
         }
     }
 }

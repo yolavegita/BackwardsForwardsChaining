@@ -1,0 +1,50 @@
+PART 1. Data
+
+    1) Rules
+       R1: A -> L
+       R2: L -> K
+       R3: D -> A
+       R4: D -> M
+       R5: F,B -> Z
+       R6: C,D -> F
+       R7: A -> D
+    2) Facts A, B, C.
+    3) Goal Z.
+PART 2. Trace
+
+    ITERATION 1
+      R1:A -> L apply. Raise flag1. Facts A, B, C and L.
+    ITERATION 2
+      R1:A -> L skip, because flag 1 raised.
+      R2:L -> K apply. Raise flag1. Facts A, B, C and L, K.
+    ITERATION 3
+      R1:A -> L skip, because flag 1 raised.
+      R2:L -> K skip, because flag 1 raised.
+      R3:D -> A not applied, because RHS in facts. Raise flag2.
+      R4:D -> M not applied, because of lacking D.
+      R5:F,B -> Z not applied, because of lacking F.
+      R6:C,D -> F not applied, because of lacking D.
+      R7:A -> D apply. Raise flag1. Facts A, B, C and L, K, D.
+    ITERATION 4
+      R1:A -> L skip, because flag 1 raised.
+      R2:L -> K skip, because flag 1 raised.
+      R3:D -> A skip, because flag 2 raised.
+      R4:D -> M apply. Raise flag1. Facts A, B, C and L, K, D, M.
+    ITERATION 5
+      R1:A -> L skip, because flag 1 raised.
+      R2:L -> K skip, because flag 1 raised.
+      R3:D -> A skip, because flag 2 raised.
+      R4:D -> M skip, because flag 1 raised.
+      R5:F,B -> Z not applied, because of lacking F.
+      R6:C,D -> F apply. Raise flag1. Facts A, B, C and L, K, D, M, F.
+    ITERATION 6
+      R1:A -> L skip, because flag 1 raised.
+      R2:L -> K skip, because flag 1 raised.
+      R3:D -> A skip, because flag 2 raised.
+      R4:D -> M skip, because flag 1 raised.
+      R5:F,B -> Z apply. Raise flag1. Facts A, B, C and L, K, D, M, F, Z.
+      Goal achieved.
+
+PART 3. Results
+    1) Goal Z achieved.
+    1) Path R1, R2, R7, R4, R6, R5.

@@ -15,6 +15,9 @@ namespace BackwardsForwardsChaining
     {
         public static void Main(string[] args)
         {
+            ILoggerService logger = null;
+            IAlgorithm algorithm = null;
+
             //Read file
             Console.WriteLine("Please provide a file name:");
             var fileName = Console.ReadLine();
@@ -33,11 +36,65 @@ namespace BackwardsForwardsChaining
 
             var (rules, facts, goal) = ReadFromFile(fileName);
 
-            //Execute
-            var logger = new ConsoleLoggerService();
-            IAlgorithm algorithm = new ForwardsChainingAlgorithm(rules, facts, goal, logger);
-            algorithm.Execute();
+            //Choose output method
+            Console.WriteLine("Please choose output method by typing:");
+            Console.WriteLine("1. Console");
+            Console.WriteLine("2. File");
 
+            var outputSelection = Convert.ToChar(Console.ReadLine());
+            if(outputSelection != '1' && outputSelection != '2')
+            {
+                Console.WriteLine($"{outputSelection} is not a valid output method. Please try again.");
+                Console.ReadKey();
+                return;
+            }
+
+            switch (outputSelection)
+            {
+                case '1':
+                    logger = new ConsoleLoggerService();
+                    break;
+                case '2':
+                    Console.WriteLine("Please provide output file name:");
+                    var outputFileName = Console.ReadLine();
+                    if (String.IsNullOrEmpty(outputFileName))
+                    {
+                        Console.WriteLine("Please provide a file name.");
+                        return;
+                    }
+
+                    logger = new FileLoggerService(outputFileName);
+                    break;
+            }
+
+            //Choose algorithm
+            Console.WriteLine("Please choose the algorithm:");
+            Console.WriteLine("1. Forwards chaining");
+            Console.WriteLine("2. Backwards chaining");
+
+            var algorithmSelection = Convert.ToChar(Console.ReadLine());
+            if (algorithmSelection != '1' && outputSelection != '2')
+            {
+                Console.WriteLine($"{algorithmSelection} is not a valid output method. Please try again.");
+                Console.ReadKey();
+                return;
+            }
+
+            switch (algorithmSelection)
+            {
+                case '1':
+                    algorithm = new ForwardsChainingAlgorithm(rules, facts, goal, logger);
+                    break;
+                case '2':
+                    algorithm = new BackwardsChainingAlgorithm(rules, facts, goal, logger);
+                    break;
+            }
+
+            //Execute
+            algorithm.Execute();
+            algorithm.Dispose();
+
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
 

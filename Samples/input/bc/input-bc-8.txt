@@ -1,0 +1,12 @@
+Student Jonas Petraška. Vilnius university, Programų sistemos.
+Test 8. Unachievable goal
+1) Rules
+Z C D         // R1: C,D -> Z. Comments.
+Y C E         // R2: C,E -> Y
+Z C           // R3: C -> Z
+
+2) Facts
+C,D
+
+3) Goal
+Y

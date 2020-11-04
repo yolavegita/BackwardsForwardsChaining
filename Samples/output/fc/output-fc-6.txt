@@ -1,0 +1,26 @@
+PART 1. Data
+
+    1) Rules
+       R1: Y,D -> Z
+       R2: X,B,E -> Y
+       R3: A -> X
+       R4: C -> L
+       R5: L,M -> N
+    2) Facts A, B, C, D, E.
+    3) Goal Z.
+PART 2. Trace
+
+    ITERATION 1
+      R1:Y,D -> Z not applied, because of lacking Y.
+      R2:X,B,E -> Y not applied, because of lacking X.
+      R3:A -> X apply. Raise flag1. Facts A, B, C, D, E and X.
+    ITERATION 2
+      R1:Y,D -> Z not applied, because of lacking Y.
+      R2:X,B,E -> Y apply. Raise flag1. Facts A, B, C, D, E and X, Y.
+    ITERATION 3
+      R1:Y,D -> Z apply. Raise flag1. Facts A, B, C, D, E and X, Y, Z.
+      Goal achieved.
+
+PART 3. Results
+    1) Goal Z achieved.
+    1) Path R3, R2, R1.

@@ -1,0 +1,18 @@
+PART 1. Data
+
+    1) Rules
+       R1: C,D -> Z
+       R2: C,E -> Y
+       R3: C -> Z
+    2) Facts C.
+    3) Goal Y.
+
+PART 2. Trace
+
+   1) Goal Y. Find R2:C,E -> Y. New goals C,E.
+   2) -Goal C. Fact (initial), as facts are C. Back, OK.
+   3) Goal E. No rules. Back, FAIL.
+   4) Goal Y. No more rules. Back, FAIL.
+
+PART 3. Results
+    1) Goal Y not achieved.
