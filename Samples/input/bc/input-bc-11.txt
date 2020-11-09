@@ -1,0 +1,17 @@
+Student Jonas Petraška. Vilnius university, Programų sistemos.
+Test 11. Eight rules
+1) Rules
+Z D C            // R1: D, C -> Z. Comments.
+D C              // R2: C -> D
+C B              // R3: B -> C
+B D              // R4: D -> B
+D T              // R5: T -> D
+A G              // R6: G -> A
+B H              // R7: H -> B
+C J              // R8: J -> C
+
+2) Facts
+T
+
+3) Goal
+Z

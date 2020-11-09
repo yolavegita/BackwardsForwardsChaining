@@ -83,11 +83,10 @@ namespace BackwardsForwardsChaining.Algorithms
             _logger.WriteLine("");
 
             if (state && _productions.Any())
-                _logger.Write($"    1) Path {string.Join(", ", _productions.Select(x => x.Number))}.");
+                _logger.WriteLine($"    1) Path {string.Join(", ", _productions.Select(x => x.Number))}.");
         }
 
         bool initial;
-        bool more;
 
         /// <summary>
         /// Internal BC recursive algorithm
@@ -97,7 +96,6 @@ namespace BackwardsForwardsChaining.Algorithms
         private bool ExecuteInternal(char goal)
         {
             initial = false;
-            more = false;
 
             if (!_goals.Contains(goal))
             {
@@ -170,6 +168,9 @@ namespace BackwardsForwardsChaining.Algorithms
 
                                 if (_goal != goal)
                                 {
+                                    //TODO: Sample 2 - C buvo anksciau, tai nereikia back-tracking.
+                                    //TODO: Reikia prideti salyga (apgalvoti).
+
                                     if (!initial)
                                     {
                                         _level--;
@@ -188,12 +189,11 @@ namespace BackwardsForwardsChaining.Algorithms
                         }
                     }
 
-                    if(!more)
+                    if(!_rules.Any(x => x.RightSide == goal))
                         _logger.WriteLine($"  {string.Format("{0, 2}", _counter + 1)}) {RepeatSymbol('-', _level)}Goal {goal}. No rules. Back, FAIL.");
                     else
                         _logger.WriteLine($"  {string.Format("{0, 2}", _counter + 1)}) {RepeatSymbol('-', _level)}Goal {goal}. No more rules. Back, FAIL.");
 
-                    more = !more;
                     _level--;
                     _counter++;
                     _goals.Remove(goal);

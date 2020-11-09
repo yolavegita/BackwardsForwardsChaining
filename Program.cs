@@ -73,9 +73,9 @@ namespace BackwardsForwardsChaining
             Console.WriteLine("2. Backwards chaining");
 
             var algorithmSelection = Convert.ToChar(Console.ReadLine());
-            if (algorithmSelection != '1' && outputSelection != '2')
+            if (algorithmSelection != '1' && algorithmSelection != '2')
             {
-                Console.WriteLine($"{algorithmSelection} is not a valid output method. Please try again.");
+                Console.WriteLine($"{algorithmSelection} is not a algorithm. Please try again.");
                 Console.ReadKey();
                 return;
             }

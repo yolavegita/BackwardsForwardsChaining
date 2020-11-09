@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Samples\input\bc\input-bc-1.txt" />
     <Content Include="Samples\input\bc\input-bc-10.txt" />
+    <Content Include="Samples\input\bc\input-bc-11.txt" />
     <Content Include="Samples\input\bc\input-bc-2.txt" />
     <Content Include="Samples\input\bc\input-bc-3.txt" />
     <Content Include="Samples\input\bc\input-bc-4.txt" />
@@ -75,6 +76,7 @@
     <Content Include="Samples\input\fc\input-fc-6.txt" />
     <Content Include="Samples\output\bc\output-bc-1.txt" />
     <Content Include="Samples\output\bc\output-bc-10.txt" />
+    <Content Include="Samples\output\bc\output-bc-11.txt" />
     <Content Include="Samples\output\bc\output-bc-2.txt" />
     <Content Include="Samples\output\bc\output-bc-3.txt" />
     <Content Include="Samples\output\bc\output-bc-4.txt" />
