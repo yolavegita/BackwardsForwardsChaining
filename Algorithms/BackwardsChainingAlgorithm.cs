@@ -87,6 +87,7 @@ namespace BackwardsForwardsChaining.Algorithms
         }
 
         bool initial;
+        List<char> ongoingGoals = new List<char>();
 
         /// <summary>
         /// Internal BC recursive algorithm
@@ -138,6 +139,7 @@ namespace BackwardsForwardsChaining.Algorithms
                         if (rule.RightSide.Equals(goal))
                         {
                             _logger.WriteLine($"  {string.Format("{0, 2}", _counter + 1)}) {RepeatSymbol('-', _level)}Goal {goal}. Find {rule.Number}:{rule.ToString()}. New goals {string.Join(",", rule.LeftSide)}.");
+                            ongoingGoals.AddRange(rule.LeftSide);
                             _counter++;
                             _level++;
 
@@ -163,7 +165,7 @@ namespace BackwardsForwardsChaining.Algorithms
                                 _derivedFacts.Add(rule.RightSide);
                                 _productions.Add(rule);
                                 _goals.Remove(goal);
-
+                                ongoingGoals.Remove(goal);
                                 _logger.Write($"  {string.Format("{0, 2}", _counter + 1)}) {RepeatSymbol('-', _level)}Goal {goal}. Fact (presently inferred). Facts {string.Join(", ", _facts)} and {string.Join(", ", _derivedFacts)}.");
 
                                 if (_goal != goal)
@@ -197,6 +199,7 @@ namespace BackwardsForwardsChaining.Algorithms
                     _level--;
                     _counter++;
                     _goals.Remove(goal);
+                    ongoingGoals.Remove(goal);
                     return false;
                 }
             }
